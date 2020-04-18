@@ -1,0 +1,6 @@
+framework module NLTencentOpenAPI {
+  umbrella header "NLTencentOpenAPI-umbrella.h"
+
+  export *
+  module * { export * }
+}

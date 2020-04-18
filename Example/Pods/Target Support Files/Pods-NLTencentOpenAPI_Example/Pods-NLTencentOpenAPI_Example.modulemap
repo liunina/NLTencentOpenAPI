@@ -1,0 +1,6 @@
+framework module Pods_NLTencentOpenAPI_Example {
+  umbrella header "Pods-NLTencentOpenAPI_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

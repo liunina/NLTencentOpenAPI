@@ -1,42 +1,29 @@
-#
-# Be sure to run `pod lib lint NLTencentOpenAPI.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'NLTencentOpenAPI'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of NLTencentOpenAPI.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.version          = '3.3.8'
+  s.summary          = 'The Official iOS SDK of Tencent Open API.'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  封装 NLTencentOpenAPI 版本为3.3.8
+  V3.3.8功能亮点介绍：
+  ·新增打印日志接口，第三方可主动调用将日志信息打印到第三方的日志中，供日后定位问题使用
+  ·新增支持设置opensdk只使用UniversalLink模式与手机QQ交互（系统要求大于等于iOS9）
                        DESC
 
-  s.homepage         = 'https://github.com/i19850511@gmail.com/NLTencentOpenAPI'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'i19850511@gmail.com' => 'i19850511@gmail.com' }
-  s.source           = { :git => 'https://github.com/i19850511@gmail.com/NLTencentOpenAPI.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.ios.deployment_target = '8.0'
-
-  s.source_files = 'NLTencentOpenAPI/Classes/**/*'
+  s.author       = 'http://open.qq.com'
+  s.homepage     = 'http://open.qq.com'
+  s.license      = {
+	  :type => 'LGPL',
+	  :file => "LICENSE"
+  }
+  s.source           = { :git => 'https://github.com/liunina/NLTencentOpenAPI.git', :tag => s.version.to_s }
+  s.ios.deployment_target = '9.0'
+  s.requires_arc = true
   
-  # s.resource_bundles = {
-  #   'NLTencentOpenAPI' => ['NLTencentOpenAPI/Assets/*.png']
-  # }
+  s.source_files   = "NLTencentOpenAPI/TencentOpenAPI.framework/Headers/**/*.h"
+  s.vendored_frameworks = 'NLTencentOpenAPI/TencentOpenAPI.framework'
+  
+  s.libraries = 'iconv', 'z', 'c++', 'sqlite3'
+  s.frameworks = 'Security', 'SystemConfiguration', 'CoreGraphics', 'CoreTelephony', 'WebKit'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
